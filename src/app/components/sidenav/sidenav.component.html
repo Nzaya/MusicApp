@@ -2,7 +2,7 @@
     <div class="logo-container">
         <button class="logo" (click)="toggleCollapse()">M</button>
         <div class="logo-text" *ngIf="collapsed">Music</div>
-        <button class="btn-close" *ngIf="collapsed" (click)="toggleCollapse()">
+        <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
             <i class="uil uil-times"></i>
         </button>
     </div>
