@@ -13,6 +13,10 @@ import { ArtistsComponent } from './components/artists/artists.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { LikedSongsComponent } from './components/liked-songs/liked-songs.component';
 
+import { OverlayModule } from '@angular/cdk/overlay';
+import { CdkMenuModule } from '@angular/cdk/menu';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +32,9 @@ import { LikedSongsComponent } from './components/liked-songs/liked-songs.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OverlayModule,
+    CdkMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

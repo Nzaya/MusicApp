@@ -7,6 +7,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ArtistsComponent } from './components/artists/artists.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { LikedSongsComponent } from './components/liked-songs/liked-songs.component';
+import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login',pathMatch: 'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'sidenav', component: SidenavComponent},
   {path: 'artists', component: ArtistsComponent},
   {path: 'albums', component: AlbumsComponent},
-  {path: 'liked_songs', component: LikedSongsComponent}
+  {path: 'liked_songs', component: LikedSongsComponent},
+  {path: 'header', component: HeaderComponent}
 ];
 
 @NgModule({

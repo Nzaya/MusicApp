@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import '@angular/cdk/overlay-prebuilt.css';
+
 
 *{
     margin: 0;
@@ -8,6 +10,45 @@
 }
 
 body{
-    position: relative;
+    // position: relative;
     font-family: 'Poppins', sans-serif;
+    // background: black;
+    background: #f4f7fa;
 }
+
+.card {
+    // box-sizing: border-box;
+    width: 250px;
+    height: 250px;
+    // background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // user-select: none;
+    font-weight: bolder;
+    // color: black;
+    float: left;
+    margin: 15px;
+  }
+
+  .card img {
+    width: 250px;
+    height: 250px;
+    border-radius: 16px;
+
+  }
+  .card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+  }
+  
+  .card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }

@@ -1,1 +1,8 @@
-<p>dashboard works!</p>
+<h1>Playlists</h1>
+<div class="card" *ngFor="let data of playData">
+    <a class="" [routerLink]="[data.routerLink]">
+        <img class="" [src]="data.image">
+        <span class="">{{data.label}}</span>
+
+    </a>
+</div>
