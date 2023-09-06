@@ -1,18 +1,22 @@
 <div class="form-container">
 	<p class="title">Login</p>
-	<form class="form">
+	<form [formGroup]="loginForm" class="form">
 		<div class="input-group">
 			<label for="username">Username</label>
-			<input type="text" name="username" id="username" placeholder="">
+			<input formControlName="username" type="text" name="username" id="username" placeholder="">
 		</div>
+		<small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required', 'username') "  style="color: red;">Username is required</small>
+
 		<div class="input-group">
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password" placeholder="">
+			<label for="password">Password</label>			
+			<input formControlName="password" type="password" name="password" id="password" placeholder="">
+			<small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" style="color: red;">Password is required</small>
 			<div class="forgot">
 				<a rel="noopener noreferrer" href="#">Forgot Password ?</a>
 			</div>
 		</div>
-		<button class="sign">Sign in</button>
+		
+		<button (click)="onSubmit()" class="sign">Log in </button>
 	</form>
 	<div class="social-message">
 		<div class="line"></div>
@@ -27,6 +31,6 @@
 		</button>
 	</div>
 	<p class="signup">Don't have an account?
-		<a rel="noopener noreferrer" href="#" class="">Sign up</a>
+		<a rel="noopener noreferrer" routerLink="/signup">Sign up</a>
 	</p>
 </div>

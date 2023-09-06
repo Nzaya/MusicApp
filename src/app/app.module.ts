@@ -4,17 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { BodyComponent } from './components/body/body.component';
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { BodyComponent } from './pages/body/body.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SidenavComponent } from './pages/sidenav/sidenav.component';
 import { ArtistsComponent } from './components/artists/artists.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { LikedSongsComponent } from './components/liked-songs/liked-songs.component';
 
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkMenuModule } from '@angular/cdk/menu';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { CdkMenuModule } from '@angular/cdk/menu';
     BrowserModule,
     AppRoutingModule,
     OverlayModule,
-    CdkMenuModule
+    CdkMenuModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

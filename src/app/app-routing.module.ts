@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SidenavComponent } from './pages/sidenav/sidenav.component';
 import { ArtistsComponent } from './components/artists/artists.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { LikedSongsComponent } from './components/liked-songs/liked-songs.component';

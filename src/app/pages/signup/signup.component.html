@@ -1,22 +1,28 @@
 <div class="form-container">
 	<p class="title">Sign Up</p>
-	<form class="form">
+	<form [formGroup]="signUpForm" class="form">
 		<div class="input-group">
 			<label for="username">Username</label>
-			<input type="text" name="username" id="username" placeholder="">
+			<input formControlName="username" type="text" name="username" id="username" placeholder="" required>
 		</div>
+		<small *ngIf="signUpForm.controls['username'].dirty && signUpForm.hasError('required', 'username') "  style="color: red;">Username is required</small>
+
         <div class="input-group">
 			<label for="username">Email</label>
-			<input type="text" name="username" id="username" placeholder="">
+			<input formControlName="email" type="text" name="username" id="username" placeholder="" required>
 		</div>
+		<small *ngIf="signUpForm.controls['email'].dirty  &&  signUpForm.hasError('required', 'emailS')" style="color: red;">Email is required</small>
+
 		<div class="input-group">
 			<label for="password">Password</label>
-			<input type="password" name="password" id="password" placeholder="">
+			<input formControlName="password" type="password" name="password" id="password" placeholder="" required>
+			<small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')" style="color: red;">Password is required</small>
 			<div class="forgot">
 				<a rel="noopener noreferrer" href="#">Forgot Password ?</a>
 			</div>
 		</div>
-		<button class="sign">Sign Up</button>
+
+		<button (click)="onSubmit()" class="sign">Sign Up</button>
 	</form>
 	<div class="social-message">
 		<div class="line"></div>
@@ -31,6 +37,6 @@
 		</button>
 	</div>
 	<p class="signup">Already have an account?
-		<a rel="noopener noreferrer" href="#" class="">Login</a>
+		<a rel="noopener noreferrer" routerLink="/login">Login</a>
 	</p>
 </div>
