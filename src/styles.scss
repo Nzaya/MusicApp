@@ -3,52 +3,101 @@
 @import '@angular/cdk/overlay-prebuilt.css';
 
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    // position: relative;
-    font-family: 'Poppins', sans-serif;
-    // background: black;
-    background: #f4f7fa;
+body {
+  // position: relative;
+  font-family: 'Poppins', sans-serif;
+  // background: black;
+  background: #f4f7fa;
 }
 
-.card {
-    // box-sizing: border-box;
-    width: 250px;
-    height: 250px;
-    // background: rgba(217, 217, 217, 0.58);
-    border: 1px solid white;
-    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-    backdrop-filter: blur(6px);
-    border-radius: 17px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.5s;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // user-select: none;
-    font-weight: bolder;
-    // color: black;
-    float: left;
-    margin: 15px;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 2rem;
+
+  .section_left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+
+    .card {
+      width: 250px;
+      height: 250px;
+      gap: 1rem;
+      background: #f0e7e794;
+      border: 1px solid white;
+      box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(6px);
+      border-radius: 17px;
+      cursor: pointer;
+      transition: all 0.5s;
+      font-weight: bolder;
+      float: left;
+      margin: .9rem;
+      a{
+        text-decoration: none;
+        margin-top: 0.2rem;
+      }
+      img {
+        width: 250px;
+        height: 250px;
+        border-radius: 16px;
+
+      }
+
+      &:hover {
+        border: 1px solid black;
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.95) rotateZ(1.7deg);
+      }
+    }
+
   }
 
-  .card img {
-    width: 250px;
-    height: 250px;
-    border-radius: 16px;
+  .section_right {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    width: 30%;
 
+    .upgrade {
+      height: 300px;
+      width: 400px;
+      // background-color: #f0e7e794;
+      border-radius: 12px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      img {
+        height: 300px;
+        width: 400px;
+        border-radius: 16px;
+
+      }
+    }
   }
-  .card:hover {
-    border: 1px solid black;
-    transform: scale(1.05);
+
+  .section_h2 {
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-self: flex-end;
+    align-items: flex-start;
+
+    h2{
+      font-size: 1.2rem;
+    }
   }
-  
-  .card:active {
-    transform: scale(0.95) rotateZ(1.7deg);
-  }
+}

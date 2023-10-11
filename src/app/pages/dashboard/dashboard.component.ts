@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { playData } from './play-data';
+import { upgradeData } from './upgrade-data';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,5 +9,6 @@ import { playData } from './play-data';
 })
 export class DashboardComponent {
   playData = playData
+  upgradeData = upgradeData
 
 }
