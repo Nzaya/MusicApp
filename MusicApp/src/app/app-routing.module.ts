@@ -8,6 +8,7 @@ import { ArtistsComponent } from './components/artists/artists.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { LikedSongsComponent } from './components/liked-songs/liked-songs.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SongCardComponent } from './components/song-card/song-card.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login',pathMatch: 'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'artists', component: ArtistsComponent},
   {path: 'albums', component: AlbumsComponent},
   {path: 'liked_songs', component: LikedSongsComponent},
-  {path: 'header', component: HeaderComponent}
+  {path: 'header', component: HeaderComponent},
+  {path: 'song_card', component: SongCardComponent}
 ];
 
 @NgModule({
