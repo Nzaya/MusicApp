@@ -8,15 +8,15 @@
 		<small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required', 'username') "  style="color: red;">Username is required</small>
 
 		<div class="input-group">
-			<label for="password">Password</label>			
+			<label for="password">Password</label>
 			<input formControlName="password" type="password" name="password" id="password" placeholder="">
 			<small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" style="color: red;">Password is required</small>
 			<div class="forgot">
 				<a rel="noopener noreferrer" href="#">Forgot Password ?</a>
 			</div>
 		</div>
-		
-		<button (click)="onSubmit()" class="sign">Log in </button>
+
+		<button (click)="onLogin()" class="sign">Log in </button>
 	</form>
 	<div class="social-message">
 		<div class="line"></div>

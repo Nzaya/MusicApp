@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit{
 
   signUpForm! : FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router){}
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router){}
 
   ngOnInit(): void {
     this.signUpForm = this.fb.group({
@@ -23,16 +23,18 @@ export class SignupComponent implements OnInit{
     })
   }
 
-  onSubmit(){
+  onSignUp(){
     if(this.signUpForm.valid){
-      console.log(this.signUpForm.value);
-
       //send to db
-      this.authService.signUp(this.signUpForm.value)
-      .subscribe({next: (response) => {
-        this.router.navigateByUrl('/login')
-      },error: (err) => console.log(err)
+      this.auth.signUp(this.signUpForm.value)
+      .subscribe({next:(res => {
+        alert(res.message)
+      }), error: (err => {
+        alert(err?.error.message)
+      })
     })
+          console.log(this.signUpForm.value);
+
     }else {
       ValidateForm.validateAllFormFields(this.signUpForm)
       alert("Your form is invalid")

@@ -1,9 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose')
-var cors = require('cors')
+const cors = require('cors')
+const session = require('express-session')
+const passport = require('passport')
 
 const app = express();
 app.use(cors());
+
+//Passport Config
+require('./config/passport')(passport)
+
+
 //DB Config
 const db = require('./config/keys').MongoURI
 
@@ -11,12 +18,24 @@ const db = require('./config/keys').MongoURI
 mongoose.connect(db, { useNewUrlParser: true})
     .then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err));
+
     
 //Bodyparser
 //for forms
 app.use(express.urlencoded({ extended: false }));
 //for json
 app.use(express.json())
+
+//Express Session Middleware
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true,
+}))
+
+//Passport Middleware
+app.use(passport.initialize())
+app.use(passport.session())
 
 //routes
 app.use('/', require('./routes/index'))
