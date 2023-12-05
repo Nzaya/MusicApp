@@ -1,0 +1,14 @@
+<section class="music">
+    <div class="song" *ngFor="let data of favArtistData">
+        <div class="info">
+            <img class="img first" [src]="data.image">
+            <div class="titles">
+                <h5>{{data.artist}}</h5>
+                <p>{{data.label}}</p>
+            </div>
+        </div>
+        <div class="state playing">
+            <i class="material-icons">..</i>
+        </div>
+    </div>
+</section>

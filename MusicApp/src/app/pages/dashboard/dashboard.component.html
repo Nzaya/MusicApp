@@ -1,34 +1,36 @@
 <section>
   <h1>Playlist</h1>
 </section>
-
-
-<section class="container">
-  <section class="section_left">
-    <div class="card" *ngFor="let data of playData">
-      <a class="" [routerLink]="[data.routerLink]">
-        <img class="" [src]="data.image">
-        <span class="">{{data.label}}</span>
-      </a>
-    </div>
-
-    <div class="section_h2">
-      <h2>Recently Played</h2>
-    </div>
+<section class="main_container">
+  <section class="container">
+    <section class="section_left">
+      <div class="card" *ngFor="let data of playData">
+        <a class="" [routerLink]="[data.routerLink]">
+          <img class="" [src]="data.image" />
+          <span class="">{{ data.label }}</span>
+        </a>
+      </div>
+  
+      <div class="section_h2">
+        <h2>Recently Played</h2>
+        <app-recently-played></app-recently-played>
+      </div>
+    </section>
+  
+    <section class="section_right">
+      <div class="upgrade" *ngFor="let data of upgradeData">
+        <a class="" [routerLink]="[data.routerLink]">
+          <img class="" [src]="data.image" />
+        </a>
+      </div>
+  
+      <div class="section_h2">
+        <h2>Favourite Artists</h2>
+        <app-fav-artists></app-fav-artists>
+      </div>
+    </section>
   </section>
-
-  <section class="section_right">
-    <div class="upgrade" *ngFor="let data of upgradeData">
-      <a class="" [routerLink]="[data.routerLink]">
-        <img class="" [src]="data.image">
-      </a>
-    </div>
-
-    <div class="section_h2">
-      <h2>Favourite Artists</h2>
-    </div>
-
-
-  </section>
-
+  <div class="music-player">
+    <app-now-playing></app-now-playing>
+  </div>
 </section>

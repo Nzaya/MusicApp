@@ -17,6 +17,9 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RecentlyPlayedComponent } from './components/recently-played/recently-played.component';
+import { FavArtistsComponent } from './components/fav-artists/fav-artists.component';
+import { NowPlayingComponent } from './components/now-playing/now-playing.component';
 
 
 @NgModule({
@@ -31,6 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
     ArtistsComponent,
     AlbumsComponent,
     LikedSongsComponent,
+    RecentlyPlayedComponent,
+    FavArtistsComponent,
+    NowPlayingComponent,
   ],
   imports: [
     BrowserModule,

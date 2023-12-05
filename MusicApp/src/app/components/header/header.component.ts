@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
   notifications = notifications
   userItems = userItems
 
+  public isLightTheme = true;
+
   constructor() { }
 
   @HostListener('window:resize', ['$event'])
@@ -43,5 +45,14 @@ export class HeaderComponent implements OnInit {
     } else {
       this.canShowSearchAsOverlay = false;
     }
+  }
+
+  onThemeSwitchChange(){
+    this.isLightTheme = !this.isLightTheme;
+
+    document.body.setAttribute(
+      'data-theme', 
+      this.isLightTheme ? 'light' : 'dark'
+    )
   }
 }

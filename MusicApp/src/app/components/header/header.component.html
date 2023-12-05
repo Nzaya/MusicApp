@@ -42,6 +42,13 @@
                     <div class="circle-indicator pulse"></div>
                 </div>
             </div>
+
+            <div class="theme-switcher">
+                <label class="switch">
+                    <input class="slider" type="checkbox" [checked]="isLightTheme" (change)="onThemeSwitchChange()">
+                </label>             
+            </div>
+
         </div>
     </div>
 </div>
@@ -82,3 +89,4 @@
     </div>
 
 </ng-template>
+

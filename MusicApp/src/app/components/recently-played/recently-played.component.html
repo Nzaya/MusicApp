@@ -1,0 +1,20 @@
+<section class="music">
+  <div class="song" *ngFor="let data of recentlyPlayedData">
+    <div class="info">
+      <img class="img first" [src]="data.image" />
+      <div class="titles">
+        <h5>{{ data.artist }}</h5>
+        <p>{{ data.song_name }}</p>
+      </div>
+    </div>
+
+    <div class="rating">
+      <h3>{{ data.time }}</h3>
+      <p>{{ data.rating }}</p>
+    </div>
+
+    <div class="state playing">
+      <i class="material-icons">..</i>
+    </div>
+  </div>
+</section>

@@ -29,11 +29,10 @@ export class SignupComponent implements OnInit{
 
       //send to db
       this.authService.signUp(this.signUpForm.value)
-      .subscribe((response) => {
-        console.log("here",response.statusCode);
-        // this.router.navigateByUrl('/login')
-      },err => console.log(err)
-      )
+      .subscribe({next: (response) => {
+        this.router.navigateByUrl('/login')
+      },error: (err) => console.log(err)
+    })
     }else {
       ValidateForm.validateAllFormFields(this.signUpForm)
       alert("Your form is invalid")
