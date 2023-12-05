@@ -2,10 +2,10 @@
 	<p class="title">Login</p>
 	<form [formGroup]="loginForm" class="form">
 		<div class="input-group">
-			<label for="username">Username</label>
-			<input formControlName="username" type="text" name="username" id="username" placeholder="">
+			<label for="username">Email</label>
+      <input formControlName="email" type="text" name="username" id="username" placeholder="" required>
 		</div>
-		<small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required', 'username') "  style="color: red;">Username is required</small>
+    <small *ngIf="loginForm.controls['email'].dirty  &&  loginForm.hasError('required', 'emailS')" style="color: red;">Email is required</small>
 
 		<div class="input-group">
 			<label for="password">Password</label>

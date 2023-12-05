@@ -1,57 +1,57 @@
-<div class="head" [ngClass]="getHeadClass()">
-    <div class="head-content">
-        <div class="head-content-left">
-            <div class="search-container">
-                <div class="normal-search">
-                    <input type="search" class="search" name="" id="" placeholder="Search ...">
-                    <i class="uil uil-search search-icon"></i>
-                </div>
-            </div>
-        </div>
+  <div class="head" [ngClass]="getHeadClass()"> <!--*ngIf="isLoggedIn" -->>
+      <div class="head-content">
+          <div class="head-content-left">
+              <div class="search-container">
+                  <div class="normal-search">
+                      <input type="search" class="search" name="" id="" placeholder="Search ...">
+                      <i class="uil uil-search search-icon"></i>
+                  </div>
+              </div>
+          </div>
 
-        <div class="head-content-right">
-            <div class="head-menu">
-                <!-- <div class="head-menu-item">
-                    <button class="head-menu-item-btn ripple">
-                        <img [src]="'assets/avatar1.jpg'" class="flag" alt="flag">
-                    </button>
-                </div> -->
-<!-- 
-                <div class="head-menu-item">
-                    <button class="head-menu-item-btn ripple">
-                        <i class="uil uil-ellipsis-h"></i>
-                    </button>
-                </div>
+          <div class="head-content-right">
+              <div class="head-menu">
+                  <!-- <div class="head-menu-item">
+                      <button class="head-menu-item-btn ripple">
+                          <img [src]="'assets/avatar1.jpg'" class="flag" alt="flag">
+                      </button>
+                  </div> -->
+  <!--
+                  <div class="head-menu-item">
+                      <button class="head-menu-item-btn ripple">
+                          <i class="uil uil-ellipsis-h"></i>
+                      </button>
+                  </div>
 
-                <div class="head-menu-item">
-                    <button class="head-menu-item-btn ripple">
-                        <i class="uil uil-bell"></i>
-                    </button>
-                </div> -->
+                  <div class="head-menu-item">
+                      <button class="head-menu-item-btn ripple">
+                          <i class="uil uil-bell"></i>
+                      </button>
+                  </div> -->
 
-                <div class="head-menu-item">
-                    <button class="head-menu-item-btn ripple" [cdkMenuTriggerFor]="notificationOverlay">
-                        <i class="uil uil-bell"></i>
-                    </button>
-                </div>
-            </div>
+                  <div class="head-menu-item">
+                      <button class="head-menu-item-btn ripple" [cdkMenuTriggerFor]="notificationOverlay">
+                          <i class="uil uil-bell"></i>
+                      </button>
+                  </div>
+              </div>
 
-            <div class="head-user-avatar-container">
-                <div class="head-user-avatar" [cdkMenuTriggerFor]="userOverlay">
-                    <img src="../../../assets/images/avatar1.jpg" alt="user" class="user-avatar">
-                    <div class="circle-indicator pulse"></div>
-                </div>
-            </div>
+              <div class="head-user-avatar-container">
+                  <div class="head-user-avatar" [cdkMenuTriggerFor]="userOverlay">
+                      <img src="../../../assets/images/avatar1.jpg" alt="user" class="user-avatar">
+                      <div class="circle-indicator pulse"></div>
+                  </div>
+              </div>
 
-            <div class="theme-switcher">
-                <label class="switch">
-                    <input class="slider" type="checkbox" [checked]="isLightTheme" (change)="onThemeSwitchChange()">
-                </label>             
-            </div>
+              <div class="theme-switcher">
+                  <label class="switch">
+                      <input class="slider" type="checkbox" [checked]="isLightTheme" (change)="onThemeSwitchChange()">
+                  </label>
+              </div>
 
-        </div>
-    </div>
-</div>
+          </div>
+      </div>
+  </div>
 
 <ng-template #notificationOverlay>
     <div class="overlay overlay-notification overlay-fall" cdkMenu>
@@ -60,7 +60,7 @@
                 <div class="notification-head">Notification</div>
                     <span class="view-all-link">
                         <a>View All</a>
-                    </span>              
+                    </span>
             </li>
             <li class="notification-message-container" *ngFor="let notification of notifications" cdkMenuItem>
                 <i [class]="notification.icon"></i>

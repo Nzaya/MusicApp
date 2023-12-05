@@ -15,13 +15,13 @@ export class LoginComponent implements OnInit{
 
   loginForm!: FormGroup;
 
-  constructor(private fb:FormBuilder, private auth:AuthService){}
+  constructor(private fb:FormBuilder, private auth:AuthService, private router: Router){}
 
 
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     })
   }
@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit{
       //Send the obj to db
       this.auth.login(this.loginForm.value).subscribe({next:(res) => {
         alert(res.message)
+        this.router.navigate(['/dashboard'])
       }, error: (err) => {
         alert(err?.error?.message)
       } })
