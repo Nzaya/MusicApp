@@ -10,20 +10,20 @@
           <span class="">{{ data.label }}</span>
         </a>
       </div>
-  
+
       <div class="section_h2">
         <h2>Recently Played</h2>
         <app-recently-played></app-recently-played>
       </div>
     </section>
-  
+
     <section class="section_right">
       <div class="upgrade" *ngFor="let data of upgradeData">
         <a class="" [routerLink]="[data.routerLink]">
           <img class="" [src]="data.image" />
         </a>
       </div>
-  
+
       <div class="section_h2">
         <h2>Favourite Artists</h2>
         <app-fav-artists></app-fav-artists>

@@ -6,7 +6,7 @@ import { BehaviorSubject, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private loggedIn = new BehaviorSubject<boolean>(false);
+  public loggedIn = new BehaviorSubject<boolean>(false);
 
   private baseUrl: string = 'http://localhost:5000';
 

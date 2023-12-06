@@ -1,4 +1,4 @@
-<div *ngIf="isLoggedIn" class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : '' ">
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : '' "> <!-- -->>
   <div class="logo-container">
     <button class="logo" (click)="toggleCollapse()">M</button>
     <div class="logo-text" *ngIf="collapsed">Music</div>

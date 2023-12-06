@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import '@angular/cdk/overlay-prebuilt.css';
-@import "themes.scss";
 
 
 * {
@@ -10,162 +9,120 @@
   box-sizing: border-box;
 }
 
-body {
-  // position: relative;
-  font-family: 'Poppins', sans-serif;
-  // background: black;
-  background: #f4f7fa;
+body[data-theme='light'] {
+  background-color: #ffffff;
+  color: #000000;
 }
 
-.main_container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 2rem;
+body[data-theme='dark'] {
+  background-color: #000000;
+  color: #ffffff;
+}
 
-  .container {
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.5s ease;
+  // background: #f4f7fa;
+
+  .main_container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: row;
+    flex-direction: column;
     gap: 2rem;
 
-    .section_left {
+    .container {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       flex-direction: row;
-      flex-wrap: wrap;
-      width: 70%;
+      gap: 2rem;
 
-      .card {
-        width: 250px;
-        height: 250px;
-        gap: 1rem;
-        background: #f0e7e794;
-        border: 1px solid white;
-        box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-        backdrop-filter: blur(6px);
-        border-radius: 17px;
-        cursor: pointer;
-        transition: all 0.5s;
-        font-weight: bolder;
-        float: left;
-        margin: .9rem;
+      .section_left {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70%;
 
-        a {
-          text-decoration: none;
-          margin-top: 0.2rem;
-        }
-
-        img {
+        .card {
           width: 250px;
           height: 250px;
-          border-radius: 16px;
+          gap: 1rem;
+          background: #f0e7e794;
+          border: 1px solid white;
+          box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+          backdrop-filter: blur(6px);
+          border-radius: 17px;
+          cursor: pointer;
+          transition: all 0.5s;
+          font-weight: bolder;
+          float: left;
+          margin: .9rem;
 
+          a {
+            text-decoration: none;
+            margin-top: 0.2rem;
+          }
+
+          img {
+            width: 250px;
+            height: 250px;
+            border-radius: 16px;
+
+          }
+
+          &:hover {
+            border: 1px solid black;
+            transform: scale(1.05);
+          }
+
+          &:active {
+            transform: scale(0.95) rotateZ(1.7deg);
+          }
         }
 
-        &:hover {
-          border: 1px solid black;
-          transform: scale(1.05);
-        }
-
-        &:active {
-          transform: scale(0.95) rotateZ(1.7deg);
-        }
       }
 
-    }
+      .section_right {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+        width: 30%;
 
-    .section_right {
-      display: flex;
-      flex-direction: row;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-      width: 30%;
-
-      .upgrade {
-        height: 300px;
-        width: 400px;
-        // background-color: #f0e7e794;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-        img {
+        .upgrade {
           height: 300px;
           width: 400px;
-          border-radius: 16px;
+          // background-color: #f0e7e794;
+          border-radius: 12px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
+          img {
+            height: 300px;
+            width: 400px;
+            border-radius: 16px;
+
+          }
+        }
+      }
+
+      .section_h2 {
+        margin-top: 2rem;
+        display: flex;
+        align-items: flex-end;
+        justify-self: flex-end;
+        align-items: flex-start;
+        flex-direction: column;
+
+        h2 {
+          font-size: 1.2rem;
         }
       }
     }
 
-    .section_h2 {
-      margin-top: 2rem;
-      display: flex;
-      align-items: flex-end;
-      justify-self: flex-end;
-      align-items: flex-start;
-      flex-direction: column;
 
-      h2 {
-        font-size: 1.2rem;
-      }
-    }
-  }
-
-  .theme-switcher {
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-      //   background: green;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      //   top: 0;
-      //   left: 0;
-      //   right: 0;
-      //   bottom: 0;
-      background-color: var(--header-theme-switch-background-color);
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
-      border-radius: 34px;
-
-      &:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: var(--header-theme-switch-before-background-color);
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
-        border-radius: 50%;
-      }
-    }
-
-    input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    input:checked+.slider {
-      background-color: var(--header-theme-switch-checked-background-color);
-    }
-
-    input:focus+.slider {
-      box-shadow: 0 0 1px var(--header-theme-switch-checked-background-color);
-    }
-
-    input:checked+.slider:before {
-      -webkit-transform: translateX(26px);
-      -ms-transform: translateX(26px);
-      transform: translateX(26px);
-    }
   }
 }
+
+
+

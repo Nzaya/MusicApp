@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RecentlyPlayedComponent } from './components/recently-played/recently-played.component';
 import { FavArtistsComponent } from './components/fav-artists/fav-artists.component';
 import { NowPlayingComponent } from './components/now-playing/now-playing.component';
+import { ThemeService } from './services/theme.service';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { NowPlayingComponent } from './components/now-playing/now-playing.compon
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

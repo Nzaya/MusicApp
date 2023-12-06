@@ -4,6 +4,7 @@
     z-index: 1;
     transition: all .5s ease;
     background: #f4f7fa;
+    // background: black;
     padding: 1rem 1.5rem 0 1.5rem;
 
     position: fixed;
@@ -21,7 +22,7 @@
         .head-content-left{
             .search-container{
                 position: relative;
-    
+
                 .normal-search{
                     .search{
                         border: none;
@@ -33,7 +34,7 @@
                         border-radius: 1.875rem;
                         outline: 0;
                     }
-    
+
                     .search-icon{
                         position: absolute;
                         font-size: 1rem;
@@ -115,7 +116,7 @@
                     }
                 }
             }
-                        
+
         }
     }
 }

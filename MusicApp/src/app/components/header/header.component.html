@@ -1,4 +1,4 @@
-  <div class="head" [ngClass]="getHeadClass()"> <!--*ngIf="isLoggedIn" -->>
+  <div class="head" [ngClass]="getHeadClass()" [ngStyle]="{'background-color': currentTheme === 'dark' ? 'red' : 'yellow'}"> <!--" -->>
       <div class="head-content">
           <div class="head-content-left">
               <div class="search-container">
@@ -43,10 +43,8 @@
                   </div>
               </div>
 
-              <div class="theme-switcher">
-                  <label class="switch">
-                      <input class="slider" type="checkbox" [checked]="isLightTheme" (change)="onThemeSwitchChange()">
-                  </label>
+              <div class="theme-toggle">
+                <button (click)="toggleTheme()">Toggle</button>
               </div>
 
           </div>
